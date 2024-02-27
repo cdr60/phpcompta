@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /js
+Disallow: /db
+Disallow: /logs
+Disallow: /temp
+Disallow: /overlib
+Disallow: /css
+Disallow: /classmail
+Disallow: /canvaschart
+Disallow: /calendar
