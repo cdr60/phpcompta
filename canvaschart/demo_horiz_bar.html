@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Horizontal Bar Chart</title>
+	<script src="./Chart.bundle.js"></script>
+	<script src="./utils.js"></script>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+<div id='canvas' style='width:800px; height:300px;'>
+<canvas id='chart2018'></canvas>
+</div>
+<script type='text/javascript'>
+var color = Chart.helpers.color;
+var horizontalBarChartData = 
+{
+labels: ['Janv','Févr','Mars','Avr','Mai','Juin','Juil','Août','Sept','Oct','Nov','Déc'],
+datasets: [
+{
+label: 'RX - enp3s0',
+backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+borderColor: window.chartColors.blue,
+borderWidth: 1,
+data : [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+904.040000
+]
+},{
+label: 'TX - enp3s0',
+backgroundColor: color(window.chartColors.blue).alpha(1).rgbString(),
+borderColor: window.chartColors.blue,
+borderWidth: 1,
+data : [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+1208.320000
+]
+},
+{
+label: 'RX - enp2s0',
+backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+borderColor: window.chartColors.red,
+borderWidth: 1,
+data : [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+1034.240000
+]
+},{
+label: 'TX - enp2s0',
+backgroundColor: color(window.chartColors.red).alpha(1).rgbString(),
+borderColor: window.chartColors.red,
+borderWidth: 1,
+data : [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+599.120000
+]
+}
+]
+};
+window.onload = function() 
+{ 
+var ctx = document.getElementById('chart2018').getContext('2d'); 
+window.myHorizontalBar = new Chart(ctx, 
+{
+type: 'horizontalBar', 
+data: horizontalBarChartData, 
+options: 
+{ 
+	elements: {	rectangle: { borderWidth: 2, }	}, 
+	responsive: true, legend: { position: 'right', }, 
+	title: { display: true,	text: 'Année 2019 (GiB)' } 
+} 
+}); 
+}; 
+
+
+</script>	
+
+	</script>
+</body>
+
+</html>
